@@ -16,10 +16,10 @@ const IOhandler = require("./IOhandler"),
 
 // Start read stream
 // unzip/extract files
-// read png files
-// copy png to a secondary stream that writes unfiltered pictures in final location
+// will have to read directory to isolate png files
+// copy original png to a secondary stream that writestream unfiltered pictures to final location
 // unpack first stream png
 // cycle through pixel (objects or arrays)
-// change values of pixels
+// change values of pixels (objects or arrays)
 // repackage png
 // write stream to final location
