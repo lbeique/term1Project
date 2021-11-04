@@ -14,3 +14,12 @@ const IOhandler = require("./IOhandler"),
   pathProcessed = `${__dirname}/grayscaled`;
 
 
+// Start read stream
+// unzip/extract files
+// read png files
+// copy png to a secondary stream that writes unfiltered pictures in final location
+// unpack first stream png
+// cycle through pixel (objects or arrays)
+// change values of pixels
+// repackage png
+// write stream to final location
