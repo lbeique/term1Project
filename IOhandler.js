@@ -34,8 +34,8 @@ const unzip = (pathIn, pathOut) => {
       .pipe(unzipper.Extract({ path: pathOut }))
       .on('entry', entry => entry.autodrain())
       .promise()
-      .then(() => console.log("Extraction operation complete"))
-      .then(() => resolve())
+      // .then(() => console.log("Extraction operation complete"))
+      .then(() => resolve(console.log("Extraction operation complete")))
       .catch((err) => reject(err));
   });
 };
