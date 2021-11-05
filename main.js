@@ -3,16 +3,21 @@
  * File Name: main.js
  * Description: Unzips PNGs, alters pixels and filters to grayscale, repackages PNGs
  * 
- * Created Date: Nov 4
+ * Created Date: November 4, 2021
  * Author: Laurent Beique
  * 
  */
 
-const IOhandler = require("./IOhandler"),
+const IOhandler = require("./IOhandler.js"),
   zipFilePath = `${__dirname}/myfile.zip`,
   pathUnzipped = `${__dirname}/unzipped`,
   pathProcessed = `${__dirname}/grayscaled`;
 
+IOhandler.unzip(zipFilePath, pathUnzipped)
+  .then(() => IOhandler.readDir(pathUnzipped))
+  .then((pngArray) => IOhandler.grayScalePromise(pngArray, pathProcessed))
+  .then(() => console.log('Files succesfully filtered!'))
+  .catch(err => console.log(err));
 
 // Start read stream
 // unzip/extract files
